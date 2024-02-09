@@ -1,13 +1,15 @@
-#Epic 1
-#Developer 1: Aliana Palmer
-#Developer 2: Nandhakumar Shankarkala
+# Epic 1
+# Developer 1: Aliana Palmer
+# Developer 2: Nandhakumar Shankarkala
 
-#import regex for password checking
+# import regex for password checking
 import re
-#User dictionary
+
+# User dictionary
 database = {}
 
-#log_or_sign asks the user of they want to log in or sign up, returns that decision
+
+# log_or_sign asks the user of they want to log in or sign up, returns that decision
 def log_or_sign():
     print("Welcome to InCollege's login page!\n")
     while True:
@@ -21,13 +23,14 @@ def log_or_sign():
         else:
             print("Invalid input, try again\n")
 
-#Signup page
+
+# Signup page
 def signup(users_dict):
-    #check if max users have been created
-    if len(users_dict)== 5:
+    # check if max users have been created
+    if len(users_dict) == 5:
         print("All permitted accounts have been created, please come back later")
         return False
-    
+
     username = input("Enter a new username: ")
     # Check if the username is unique
     if username in users_dict:
@@ -48,7 +51,8 @@ def signup(users_dict):
     print("User created successfully.")
     return True
 
-#login function
+
+# login function
 def login(user_dict):
     username = input("Enter username:")
     password = input("Enter password:")
@@ -60,11 +64,12 @@ def login(user_dict):
         print("Incorrect login, try again.")
         return 0
 
-#login page
+
+# login page
 def loginPage():
     while True:
         user_desi = log_or_sign()
-        #Desision tree
+        # Decision tree
         match user_desi:
             case "l":
                 auth = login(database)
@@ -73,13 +78,11 @@ def loginPage():
             case "s":
                 signup(database)
             case _:
-                print("You shouldnt see this")
+                print("You shouldn't see this")
 
-#Main function
+
+# Main function
 if loginPage():
     print("This is the next page!")
-    #implement your next page here, login worked 
-    #lmk if you need any help! - Nandhu
-
-            
-
+    # implement your next page here, login worked
+    # lmk if you need any help! - Nandhu
